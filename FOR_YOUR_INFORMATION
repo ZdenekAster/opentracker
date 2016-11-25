@@ -1,0 +1,21 @@
+i write you here because i can't find any email adresse.
+
+i have seen your issue about http firmware update. in your zip you included php code and i have seen that you are not using prepared statements.
+
+so i tried it out and yep i can break your code.
+
+you should never use mysql_query php function. use Mysql PDO with prepared statments
+php explains it how you should use it
+https://secure.php.net/manual/en/mysqli.quickstart.prepared-statements.php
+
+
+as an example for sql injection
+
+`curl -X POST "http://autat.gmstrans.cz/cu/firmware.php?action=setversion&imei=testtest"`
+output:
+
+```Firmware je stejny
+Query failed: Unknown column 'eeeeeeeeeeeeeee' in 'where clause'```
+
+i hope you are not angry. i only want to help you!!!!
+
